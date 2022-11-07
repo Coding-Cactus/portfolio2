@@ -18,6 +18,7 @@ body {
     min-height: 100vh;
     min-width: 100vw;
     font-family: 'Dosis', sans-serif;
+    overflow-x: hidden;
 }
 
 #name {
@@ -95,4 +96,53 @@ body {
 @keyframes cactus-top {
     0%   { opacity: 1; }
     100% { opacity: 1;transform: none; }
+}
+
+#about-me {
+    font-size: 32px;
+    height: 100vh;
+    width: 100vw;
+    padding-left: 40vw;
+    padding-right: 10vw;
+    padding-top: calc(50vh - 300px);
+}
+
+#about-me h1, #about-me p, #about-me li {
+    opacity: 0;
+    animation: fade-in 0.8s ease-in-out 3.2s forwards;
+}
+
+@keyframes fade-in {
+    65%  { opacity: 0.7; transform: scale(1.05) }
+    100% { opacity: 1; transform: none; }
+}
+
+#about-me .one   { animation-delay: 2.8s; }
+#about-me .two   { animation-delay: 3s;   }
+#about-me .three { animation-delay: 3.2s; }
+#about-me .four  { animation-delay: 3.4s; }
+#about-me .five  { animation-delay: 3.6s; }
+#about-me .six   { animation-delay: 3.8s; }
+#about-me .seven { animation-delay: 4s;   }
+#about-me .eight { animation-delay: 4.2s; }
+
+#about-me h1 {
+    font-weight: 400;
+    font-size: 128px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#about-me p {
+    line-height: 42px;
+    margin-bottom: 15px;
+}
+
+#about-me ul, #about-me li {
+    margin-left: 1em;
+    line-height: 42px;
+}
+
+#about-me a {
+    color: var(--foreground);
 }
