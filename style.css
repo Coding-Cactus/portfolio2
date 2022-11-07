@@ -63,17 +63,16 @@ h1 span:nth-child(12) { animation-delay: 1.2s; }
 }
 
 #cactus-bottom {
-    animation: cactus-bottom 0.8s ease-in-out 0.7s forwards;
+    animation: cactus-bottom 0.8s ease-in 0.7s forwards;
 }
-
 
 #cactus-top {
     animation: cactus-top 0.5s ease-in-out 1.7s forwards;
 }
 
 @keyframes cactus-bottom {
-    0% { transform: none; }
-    90% { left: calc(50vw - 445px); }
+    80%  { left: calc(50vw - 440px); }
+    92%  { left: calc(50vw - 478px); }
     100% { left: calc(50vw - 462px); }
 }
 
