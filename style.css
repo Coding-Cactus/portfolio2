@@ -20,67 +20,79 @@ body {
     font-family: 'Dosis', sans-serif;
 }
 
-h1 {
-    --height: 207px;
+#name {
+    --height: 503px;
+    --width: 923px;
     font-size: 164px;
     text-align: center;
     letter-spacing: 4px;
     position: absolute;
-    top: calc(-1 * var(--height));
-    left: calc(50vw - 447px);
+    top: calc(50vh - calc(var(--height) / 2));
+    left: calc(50vw - var(--width) / 2);
+    animation: name-rotate 0.8s ease-in-out 2.35s forwards;
 }
 
-h1 span {
+@keyframes name-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-90deg) translateY(-220px) scale(0.8);
+        left: 0;
+    }
+}
+
+#name span {
     display: inline-block;
-    animation: letter-fall 0.4s ease-in-out 0.1s forwards;
+    transform: translateY(calc(-50vh - var(--height)));
+    animation: letter-fall 0.5s ease-in-out 0.1s forwards;
+    margin-bottom: 20px;
 }
 
 @keyframes letter-fall {
-    70%  { transform: translateY(calc(50vh + var(--height) / 2 + 15px)); }
-    92%  { transform: translateY(calc(50vh + var(--height) / 2 - 10px)); }
-    100% { transform: translateY(calc(50vh + var(--height) / 2)); }
+    75%  { transform: translateY(10px); }
+    92%  { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
 }
 
-h1 span:nth-child(1)  { animation-delay: 0.1s; }
-h1 span:nth-child(2)  { animation-delay: 0.2s; }
-h1 span:nth-child(3)  { animation-delay: 0.3s; }
-h1 span:nth-child(4)  { animation-delay: 0.4s; }
-h1 span:nth-child(5)  { animation-delay: 0.5s; }
-h1 span:nth-child(6)  { animation-delay: 0.6s; }
-h1 span:nth-child(7)  { animation-delay: 0.7s; }
-h1 span:nth-child(8)  { animation-delay: 0.8s; }
-h1 span:nth-child(9)  { animation-delay: 0.9s; }
-h1 span:nth-child(10) { animation-delay: 1s;   }
-h1 span:nth-child(11) { animation-delay: 1.1s; }
-h1 span:nth-child(12) { animation-delay: 1.2s; }
+#letters span:nth-child(1)  { animation-delay: 0.1s; }
+#letters span:nth-child(2)  { animation-delay: 0.2s; }
+#letters span:nth-child(3)  { animation-delay: 0.3s; }
+#letters span:nth-child(4)  { animation-delay: 0.4s; }
+#letters span:nth-child(5)  { animation-delay: 0.5s; }
+#letters span:nth-child(6)  { animation-delay: 0.6s; }
+#letters span:nth-child(7)  { animation-delay: 0.7s; }
+#letters span:nth-child(8)  { animation-delay: 0.8s; }
+#letters span:nth-child(9)  { animation-delay: 0.9s; }
+#letters span:nth-child(10) { animation-delay: 1s;   }
+#letters span:nth-child(11) { animation-delay: 1.1s; }
+#letters span:nth-child(12) { animation-delay: 1.2s; }
 
 #cactus-top, #cactus-bottom {
+    --cactus-height: 138px;
     fill: var(--foreground);
     stroke: var(--foreground);
-    position: absolute;
-    top: calc(50vh + 117px);
-    left: -923px;
+    display: block;
 }
 
 #cactus-bottom {
-    animation: cactus-bottom 0.8s ease-in 0.7s forwards;
+    transform: translateX(calc(-50vw - var(--width) / 2));
+    animation: cactus-bottom 1s ease-in 0.7s forwards;
 }
 
 #cactus-top {
-    animation: cactus-top 0.5s ease-in-out 1.7s forwards;
+    opacity: 0;
+    transform: translateY(calc(var(--height) - var(--cactus-height))) rotateX(180deg);
+    animation: cactus-top 0.6s ease-in-out 1.8s forwards;
 }
 
 @keyframes cactus-bottom {
-    80%  { left: calc(50vw - 440px); }
-    92%  { left: calc(50vw - 478px); }
-    100% { left: calc(50vw - 462px); }
+    80%  { transform: translateX(30px); }
+    92%  { transform: translateX(-10px); }
+    100% { transform: none; }
 }
 
 @keyframes cactus-top {
-    0% { left: calc(50vw - 462px); }
-    100% {
-        left: calc(50vw - 462px);
-        top: calc(50vh - 224px);
-        transform: rotateX(180deg);
-    }
+    0%   { opacity: 1; }
+    100% { opacity: 1;transform: none; }
 }
