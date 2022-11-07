@@ -32,11 +32,13 @@ h1 {
 
 h1 span {
     display: inline-block;
-    animation: letter-fall 0.4s cubic-bezier(0.04, 1.2, 0.62, 1.17) 0.1s forwards;
+    animation: letter-fall 0.4s ease-in-out 0.1s forwards;
 }
 
 @keyframes letter-fall {
-    100% { transform: translateY(calc(50vh + var(--height) / 2)) }
+    70%  { transform: translateY(calc(50vh + var(--height) / 2 + 15px)); }
+    92%  { transform: translateY(calc(50vh + var(--height) / 2 - 10px)); }
+    100% { transform: translateY(calc(50vh + var(--height) / 2)); }
 }
 
 h1 span:nth-child(1)  { animation-delay: 0.1s; }
